@@ -1,0 +1,24 @@
+{
+  "properties": [
+    {
+      "name": "api.baseUri",
+      "type": "java.lang.String",
+      "description": "Description for api.baseUri."
+    },
+    {
+      "name": "api.key",
+      "type": "java.lang.String",
+      "description": "Description for api.key."
+    },
+    {
+      "name": "image.refresher.cron",
+      "type": "java.lang.String",
+      "description": "Description for image.refresher.cron."
+    },
+    {
+      "name": "pool.size",
+      "type": "java.lang.String",
+      "description": "Description for pool.size."
+    }
+  ]
+}

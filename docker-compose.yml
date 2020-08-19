@@ -1,0 +1,32 @@
+version: '3'
+
+services:
+  agiledb:
+    container_name: agile_engine_db
+    image: postgres:latest
+    ports:
+      - 5432:5432
+    restart: on-failure
+    environment:
+      POSTGRES_USER: testuser
+      POSTGRES_PASSWORD: password
+      POSTGRES_DATABASE: agileengine
+      POSTGRES_ROOT_PASSWORD: password
+      POSTGRES_PRIMARY_USER: primaryuser
+      POSTGRES_PRIMARY_PASSWORD: password
+      POSTGRES_PRIMARY_PORT: 5432
+      POSTGRES_PORT: 5432
+    volumes:
+      - db-data:/var/lib/postgresql/data
+  testtask:
+    container_name: agile_engine_task
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8088:8080
+    depends_on:
+      - agiledb
+
+volumes:
+  db-data:
