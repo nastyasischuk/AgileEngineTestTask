@@ -1,0 +1,21 @@
+api:
+  key: 23567b218376f79d9415
+  baseUri: http://interview.agileengine.com
+
+image:
+  refresher:
+    cron: "*/30 * * * * *"
+pool:
+  size: 2
+
+spring:
+  datasource:
+    url: jdbc:postgresql://agiledb:5432/postgres
+    username: testuser
+    password: password
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 10
